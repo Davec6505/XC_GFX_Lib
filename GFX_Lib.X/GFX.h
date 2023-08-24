@@ -14,32 +14,31 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 //includes
-//#include "Fonts.h"
+#include "Fonts.h"
+#include <stdint.h>
 
-////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////
 //defines
-#define uint8_t unsigned short
-#define uint16_t unsigned int
 
 #define   FONT_OFFSET_FIRSTCHAR   0x02
 #define   FONT_OFFSET_LASTCHAR    0x04
 #define   FONT_OFFSET_HEIGHT      0x06
 #define   FONT_OFFSET_WTABLE      0x08
 
-////////////////////////////////////////////////////////////////////////////////
-//structs enums & types
+
 struct FontArr{
-unsigned short Data;
-unsigned int CharPosWorkingTable;
-unsigned int CharCount;
-unsigned int FirstChar;
-unsigned int LastChar;
-unsigned int CharHeight;
-unsigned int BMP_Pos;
-unsigned int width;
+uint8_t Data;
+uint16_t CharPosWorkingTable;
+uint16_t CharCount;
+uint16_t FirstChar;
+uint16_t LastChar;
+uint16_t CharHeight;
+uint16_t BMP_Pos;
+uint16_t width;
 };
 
 extern struct FontArr fontInfo;
+
 ////////////////////////////////////////////////////////////////////////////////
 //globals
 extern const uint8_t *font;
