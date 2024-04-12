@@ -5,8 +5,9 @@
 
 //GLCD FontName : Rockwell8x9
 //GLCD FontSize : 8 x 9
+#include "Fonts.h"
 
-const unsigned short Rockwell8x9[] = {
+const uint8_t Rockwell8x9[] = {
    0x00,
    0x00,
    0x20,0x00,

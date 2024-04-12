@@ -5,8 +5,9 @@
 
 //GLCD FontName : Segoe_UI_Semibold13x14
 //GLCD FontSize : 13 x 14
+#include "Fonts.h"
 
-const unsigned short Segoe_UI_Semibold13x14[] = {
+const uint8_t Segoe_UI_Semibold13x14[] = {
    0x00,0x00,
    0x20,0x00,
    0x7F,0x00,

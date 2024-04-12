@@ -29,12 +29,12 @@ CND_CONF=default
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 IMAGE_TYPE=debug
 OUTPUT_SUFFIX=a
-DEBUGGABLE_SUFFIX=a
+DEBUGGABLE_SUFFIX=
 FINAL_IMAGE=${DISTDIR}/GFX_Lib.X.${OUTPUT_SUFFIX}
 else
 IMAGE_TYPE=production
 OUTPUT_SUFFIX=a
-DEBUGGABLE_SUFFIX=a
+DEBUGGABLE_SUFFIX=
 FINAL_IMAGE=${DISTDIR}/GFX_Lib.X.${OUTPUT_SUFFIX}
 endif
 
@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=GFX.c Arial8x11.c Segoe_UI.c Arial11x11.c Rockwell8x9.c
+SOURCEFILES_QUOTED_IF_SPACED=GFX.c Arial8x11.c Segoe_UI.c Arial11x11.c Rockwell8x9.c Pictures.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/GFX.o ${OBJECTDIR}/Arial8x11.o ${OBJECTDIR}/Segoe_UI.o ${OBJECTDIR}/Arial11x11.o ${OBJECTDIR}/Rockwell8x9.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/GFX.o.d ${OBJECTDIR}/Arial8x11.o.d ${OBJECTDIR}/Segoe_UI.o.d ${OBJECTDIR}/Arial11x11.o.d ${OBJECTDIR}/Rockwell8x9.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/GFX.o ${OBJECTDIR}/Arial8x11.o ${OBJECTDIR}/Segoe_UI.o ${OBJECTDIR}/Arial11x11.o ${OBJECTDIR}/Rockwell8x9.o ${OBJECTDIR}/Pictures.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/GFX.o.d ${OBJECTDIR}/Arial8x11.o.d ${OBJECTDIR}/Segoe_UI.o.d ${OBJECTDIR}/Arial11x11.o.d ${OBJECTDIR}/Rockwell8x9.o.d ${OBJECTDIR}/Pictures.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/GFX.o ${OBJECTDIR}/Arial8x11.o ${OBJECTDIR}/Segoe_UI.o ${OBJECTDIR}/Arial11x11.o ${OBJECTDIR}/Rockwell8x9.o
+OBJECTFILES=${OBJECTDIR}/GFX.o ${OBJECTDIR}/Arial8x11.o ${OBJECTDIR}/Segoe_UI.o ${OBJECTDIR}/Arial11x11.o ${OBJECTDIR}/Rockwell8x9.o ${OBJECTDIR}/Pictures.o
 
 # Source Files
-SOURCEFILES=GFX.c Arial8x11.c Segoe_UI.c Arial11x11.c Rockwell8x9.c
+SOURCEFILES=GFX.c Arial8x11.c Segoe_UI.c Arial11x11.c Rockwell8x9.c Pictures.c
 
 
 
@@ -84,74 +84,8 @@ ifneq ($(INFORMATION_MESSAGE), )
 endif
 	${MAKE}  -f nbproject/Makefile-default.mk ${DISTDIR}/GFX_Lib.X.${OUTPUT_SUFFIX}
 
-MP_PROCESSOR_OPTION=33CH128MP508
-MP_LINKER_FILE_OPTION=,--script=p33CH128MP508.gld
-# ------------------------------------------------------------------------------------
-# Rules for buildStep: compile
-ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/GFX.o: GFX.c  .generated_files/flags/default/3a47d6d8dbd746a75fc0a66e5761c1abc8841896 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/GFX.o.d 
-	@${RM} ${OBJECTDIR}/GFX.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  GFX.c  -o ${OBJECTDIR}/GFX.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/GFX.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
-	
-${OBJECTDIR}/Arial8x11.o: Arial8x11.c  .generated_files/flags/default/5ed49dbe5cdee70f4e701aa5a979f61bc09cd1b8 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/Arial8x11.o.d 
-	@${RM} ${OBJECTDIR}/Arial8x11.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  Arial8x11.c  -o ${OBJECTDIR}/Arial8x11.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/Arial8x11.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
-	
-${OBJECTDIR}/Segoe_UI.o: Segoe_UI.c  .generated_files/flags/default/f4c03dac944119b269729751f49b9af83f359242 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/Segoe_UI.o.d 
-	@${RM} ${OBJECTDIR}/Segoe_UI.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  Segoe_UI.c  -o ${OBJECTDIR}/Segoe_UI.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/Segoe_UI.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
-	
-${OBJECTDIR}/Arial11x11.o: Arial11x11.c  .generated_files/flags/default/7bd764fd52eb482c11ff04aeb9f62e333eeb84c6 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/Arial11x11.o.d 
-	@${RM} ${OBJECTDIR}/Arial11x11.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  Arial11x11.c  -o ${OBJECTDIR}/Arial11x11.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/Arial11x11.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
-	
-${OBJECTDIR}/Rockwell8x9.o: Rockwell8x9.c  .generated_files/flags/default/e9882eb349ef4598712750bf06326a82c0d14522 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/Rockwell8x9.o.d 
-	@${RM} ${OBJECTDIR}/Rockwell8x9.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  Rockwell8x9.c  -o ${OBJECTDIR}/Rockwell8x9.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/Rockwell8x9.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
-	
-else
-${OBJECTDIR}/GFX.o: GFX.c  .generated_files/flags/default/7de5449132628b75dc8e941e921345b2d90dd50a .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/GFX.o.d 
-	@${RM} ${OBJECTDIR}/GFX.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  GFX.c  -o ${OBJECTDIR}/GFX.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/GFX.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
-	
-${OBJECTDIR}/Arial8x11.o: Arial8x11.c  .generated_files/flags/default/50861604dabec84c9905646fc4a05980bad3c926 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/Arial8x11.o.d 
-	@${RM} ${OBJECTDIR}/Arial8x11.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  Arial8x11.c  -o ${OBJECTDIR}/Arial8x11.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/Arial8x11.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
-	
-${OBJECTDIR}/Segoe_UI.o: Segoe_UI.c  .generated_files/flags/default/9dfc057494b307af8c25458acfda494125544500 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/Segoe_UI.o.d 
-	@${RM} ${OBJECTDIR}/Segoe_UI.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  Segoe_UI.c  -o ${OBJECTDIR}/Segoe_UI.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/Segoe_UI.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
-	
-${OBJECTDIR}/Arial11x11.o: Arial11x11.c  .generated_files/flags/default/def4779e8ff294d0689f21a682ba10c75661a2cc .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/Arial11x11.o.d 
-	@${RM} ${OBJECTDIR}/Arial11x11.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  Arial11x11.c  -o ${OBJECTDIR}/Arial11x11.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/Arial11x11.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
-	
-${OBJECTDIR}/Rockwell8x9.o: Rockwell8x9.c  .generated_files/flags/default/74b2ddcdfcaade245c777cbfe596ae0e66d87c21 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/Rockwell8x9.o.d 
-	@${RM} ${OBJECTDIR}/Rockwell8x9.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  Rockwell8x9.c  -o ${OBJECTDIR}/Rockwell8x9.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/Rockwell8x9.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
-	
-endif
-
+MP_PROCESSOR_OPTION=32MZ2048EFH100
+MP_LINKER_FILE_OPTION=
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
@@ -159,7 +93,91 @@ else
 endif
 
 # ------------------------------------------------------------------------------------
-# Rules for buildStep: assemblePreproc
+# Rules for buildStep: assembleWithPreprocess
+ifeq ($(TYPE_IMAGE), DEBUG_RUN)
+else
+endif
+
+# ------------------------------------------------------------------------------------
+# Rules for buildStep: compile
+ifeq ($(TYPE_IMAGE), DEBUG_RUN)
+${OBJECTDIR}/GFX.o: GFX.c  .generated_files/flags/default/ba702003cdee9074dc1d1255b9430c702387035 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/GFX.o.d 
+	@${RM} ${OBJECTDIR}/GFX.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -fno-common -MP -MMD -MF "${OBJECTDIR}/GFX.o.d" -o ${OBJECTDIR}/GFX.o GFX.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/Arial8x11.o: Arial8x11.c  .generated_files/flags/default/83cb676018fd1ec6a22e06d8446a96a0d8512397 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Arial8x11.o.d 
+	@${RM} ${OBJECTDIR}/Arial8x11.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -fno-common -MP -MMD -MF "${OBJECTDIR}/Arial8x11.o.d" -o ${OBJECTDIR}/Arial8x11.o Arial8x11.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/Segoe_UI.o: Segoe_UI.c  .generated_files/flags/default/9b3cf2df2f39270bbc9cf57784e364de41efb7b4 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Segoe_UI.o.d 
+	@${RM} ${OBJECTDIR}/Segoe_UI.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -fno-common -MP -MMD -MF "${OBJECTDIR}/Segoe_UI.o.d" -o ${OBJECTDIR}/Segoe_UI.o Segoe_UI.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/Arial11x11.o: Arial11x11.c  .generated_files/flags/default/f3a810314936a294d9d72e03150705fdb3aedc77 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Arial11x11.o.d 
+	@${RM} ${OBJECTDIR}/Arial11x11.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -fno-common -MP -MMD -MF "${OBJECTDIR}/Arial11x11.o.d" -o ${OBJECTDIR}/Arial11x11.o Arial11x11.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/Rockwell8x9.o: Rockwell8x9.c  .generated_files/flags/default/fd106a49bfc34d01d2d09b2f293c1718e15a5ec6 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Rockwell8x9.o.d 
+	@${RM} ${OBJECTDIR}/Rockwell8x9.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -fno-common -MP -MMD -MF "${OBJECTDIR}/Rockwell8x9.o.d" -o ${OBJECTDIR}/Rockwell8x9.o Rockwell8x9.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/Pictures.o: Pictures.c  .generated_files/flags/default/b2a15b2b1047b3d56a0d7c99410857cd48fc3fc9 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Pictures.o.d 
+	@${RM} ${OBJECTDIR}/Pictures.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -fno-common -MP -MMD -MF "${OBJECTDIR}/Pictures.o.d" -o ${OBJECTDIR}/Pictures.o Pictures.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+else
+${OBJECTDIR}/GFX.o: GFX.c  .generated_files/flags/default/eda504315345bafac0b94eea1227f01aa25d7218 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/GFX.o.d 
+	@${RM} ${OBJECTDIR}/GFX.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -fno-common -MP -MMD -MF "${OBJECTDIR}/GFX.o.d" -o ${OBJECTDIR}/GFX.o GFX.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/Arial8x11.o: Arial8x11.c  .generated_files/flags/default/752d3b7a439dd1ad70505b508a304c68bac804df .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Arial8x11.o.d 
+	@${RM} ${OBJECTDIR}/Arial8x11.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -fno-common -MP -MMD -MF "${OBJECTDIR}/Arial8x11.o.d" -o ${OBJECTDIR}/Arial8x11.o Arial8x11.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/Segoe_UI.o: Segoe_UI.c  .generated_files/flags/default/8baa895ac615950375a596521849706902e75ad1 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Segoe_UI.o.d 
+	@${RM} ${OBJECTDIR}/Segoe_UI.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -fno-common -MP -MMD -MF "${OBJECTDIR}/Segoe_UI.o.d" -o ${OBJECTDIR}/Segoe_UI.o Segoe_UI.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/Arial11x11.o: Arial11x11.c  .generated_files/flags/default/adb1083805378aa46a534e1b2229fdde4555adf2 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Arial11x11.o.d 
+	@${RM} ${OBJECTDIR}/Arial11x11.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -fno-common -MP -MMD -MF "${OBJECTDIR}/Arial11x11.o.d" -o ${OBJECTDIR}/Arial11x11.o Arial11x11.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/Rockwell8x9.o: Rockwell8x9.c  .generated_files/flags/default/4d4ec2964fc16f96bc1e7713bf1b42f8d6c10817 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Rockwell8x9.o.d 
+	@${RM} ${OBJECTDIR}/Rockwell8x9.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -fno-common -MP -MMD -MF "${OBJECTDIR}/Rockwell8x9.o.d" -o ${OBJECTDIR}/Rockwell8x9.o Rockwell8x9.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/Pictures.o: Pictures.c  .generated_files/flags/default/a7f2c657203848695529f5522bc9b743881db2ca .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Pictures.o.d 
+	@${RM} ${OBJECTDIR}/Pictures.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -fno-common -MP -MMD -MF "${OBJECTDIR}/Pictures.o.d" -o ${OBJECTDIR}/Pictures.o Pictures.c    -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+endif
+
+# ------------------------------------------------------------------------------------
+# Rules for buildStep: compileCPP
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 else
 endif
@@ -169,15 +187,11 @@ endif
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 ${DISTDIR}/GFX_Lib.X.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
 	@${MKDIR} ${DISTDIR} 
-	@${RM} ${DISTDIR}/GFX_Lib.X.${OUTPUT_SUFFIX} 
-	${MP_AR} $(MP_EXTRA_AR_PRE)  -omf=elf -r ${DISTDIR}/GFX_Lib.X.${OUTPUT_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}       -mdfp="${DFP_DIR}/xc16" 
-	
+	${MP_AR} $(MP_EXTRA_AR_PRE)  r ${DISTDIR}/GFX_Lib.X.${OUTPUT_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}    
 else
 ${DISTDIR}/GFX_Lib.X.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   
 	@${MKDIR} ${DISTDIR} 
-	@${RM} ${DISTDIR}/GFX_Lib.X.${OUTPUT_SUFFIX} 
-	${MP_AR} $(MP_EXTRA_AR_PRE)  -omf=elf -r ${DISTDIR}/GFX_Lib.X.${OUTPUT_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}       -mdfp="${DFP_DIR}/xc16" 
-	
+	${MP_AR} $(MP_EXTRA_AR_PRE)  r ${DISTDIR}/GFX_Lib.X.${OUTPUT_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}    
 endif
 
 
@@ -196,7 +210,7 @@ endif
 # Enable dependency checking
 .dep.inc: .depcheck-impl
 
-DEPFILES=$(shell mplabwildcard ${POSSIBLE_DEPFILES})
+DEPFILES=$(wildcard ${POSSIBLE_DEPFILES})
 ifneq (${DEPFILES},)
 include ${DEPFILES}
 endif

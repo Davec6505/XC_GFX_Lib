@@ -5,8 +5,9 @@
 
 //GLCD FontName : Arial11x11
 //GLCD FontSize : 11 x 11
+#include "Fonts.h"
 
-const unsigned short ArialIt11x11[] = {
+const uint8_t ArialIt11x11[] = {
    0x00,0x00,
    0x20,0x00,
    0x7F,0x00,

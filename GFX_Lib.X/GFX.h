@@ -10,11 +10,9 @@
 #define	GFX_H
 
 
-#include <stdint.h>
 
 ////////////////////////////////////////////////////////////////////////////////
 //includes
-#include "Fonts.h"
 #include <stdint.h>
 
 /////////////////////////////////////////////////
@@ -26,7 +24,7 @@
 #define   FONT_OFFSET_WTABLE      0x08
 
 
-struct FontArr{
+typedef struct {
 uint8_t Data;
 uint16_t CharPosWorkingTable;
 uint16_t CharCount;
@@ -35,9 +33,9 @@ uint16_t LastChar;
 uint16_t CharHeight;
 uint16_t BMP_Pos;
 uint16_t width;
-};
+}FontArr;
 
-extern struct FontArr fontInfo;
+extern FontArr fontInfo;
 
 ////////////////////////////////////////////////////////////////////////////////
 //globals
