@@ -1,10 +1,12 @@
 #include "GFX.h"
 
 
-const  uint8_t *font;
+ uint8_t *volatile font;
 
 void _GFXSetFont(const uint8_t *new_font){
-   font = new_font;
+    font = 0;
+   while(font != new_font) 
+            font = new_font;
 }
 
 uint16_t _GFXGetBMPLocation(uint16_t offset){

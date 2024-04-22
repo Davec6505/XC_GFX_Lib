@@ -39,8 +39,11 @@ extern FontArr fontInfo;
 
 ////////////////////////////////////////////////////////////////////////////////
 //globals
-extern const uint8_t *font;
+extern uint8_t *volatile font;
 
+
+////////////////////////////////////////////////////////////////////////////////
+//function prototypes
 void _GFXSetFont(const uint8_t *new_font);
 uint16_t _GFXGetBMPLocation(uint16_t offset);
 uint16_t _GFXGetCharWidth(uint16_t offset);
